@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="16dp"
+    tools:context=".ui.MenuActivity">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_close_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Lucas"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_close" />
+
+    <TextView
+        android:id="@+id/tv_agencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/agencia"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_nome" />
+
+    <TextView
+        android:id="@+id/tv_conta_corrente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/conta_corrente"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tv_agencia"
+        app:layout_constraintTop_toTopOf="@id/tv_agencia" />
+
+    <ImageView
+        android:id="@+id/iv_sair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_logout_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_agencia"
+        app:tint="@color/redPrimary" />
+
+    <TextView
+        android:id="@+id/tv_sair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/sair_do_app"
+        android:textColor="@color/redPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_sair"
+        app:layout_constraintStart_toEndOf="@id/iv_sair"
+        app:layout_constraintTop_toTopOf="@id/iv_sair" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

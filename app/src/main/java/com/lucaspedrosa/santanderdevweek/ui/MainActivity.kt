@@ -1,5 +1,6 @@
 package com.lucaspedrosa.santanderdevweek.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -14,9 +15,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.lucaspedrosa.santanderdevweek.R
 import com.lucaspedrosa.santanderdevweek.data.Conta
 
+const val EXTRA_AGENCIA = "com.lucaspedrosa.santanderdevweek.AGENCIA"
+const val EXTRA_CONTA = "com.lucaspedrosa.santanderdevweek.CONTA"
+
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mainViewModel: MainViewModel
+    private lateinit var conta: Conta
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun buscarCliente() {
         mainViewModel.buscarContaCliente().observe(this, Observer { result ->
+            conta = result
             bindOnView(result)
         })
     }
@@ -71,7 +77,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.iv_menu -> Toast.makeText(this, "Menu click", Toast.LENGTH_SHORT).show()
+            R.id.iv_menu -> {
+                //Toast.makeText(this, "Menu click", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MenuActivity::class.java).apply {
+                    putExtra(EXTRA_AGENCIA, getString(R.string.agencia, conta.agencia))
+                    putExtra(EXTRA_CONTA, getString(R.string.agencia, conta.numero))
+                }
+                startActivity(intent)
+            }
             R.id.tv_ver_extrato -> Toast.makeText(this, "Ver extrato click", Toast.LENGTH_SHORT).show()
             R.id.mcv_card_pagar -> Toast.makeText(this, "Pagar click", Toast.LENGTH_SHORT).show()
             R.id.mcv_card_transferir -> Toast.makeText(this, "Transferir click", Toast.LENGTH_SHORT).show()

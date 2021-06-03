@@ -13,4 +13,5 @@
     <string name="ola_usuario">Olá, %1$s</string>
     <string name="saldo" translatable="false">R$ %1$s</string>
     <string name="limite" translatable="false">R$ %1$s</string>
+    <string name="sair_do_app">Sair do app</string>
 </resources>

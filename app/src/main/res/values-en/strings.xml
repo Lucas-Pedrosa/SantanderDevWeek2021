@@ -11,4 +11,5 @@
     <string name="agencia">Ag %1$s</string>
     <string name="conta_corrente">Ac %1$s</string>
     <string name="ola_usuario">Hello, %1$s</string>
+    <string name="sair_do_app">Exit app</string>
 </resources>
